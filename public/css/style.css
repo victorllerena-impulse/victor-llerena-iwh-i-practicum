@@ -1,58 +1,96 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-body, * {
+* {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #213343;
+    background: #f5f8fa;
+    padding: 2rem;
+}
+
+.page {
+    max-width: 960px;
+    margin: 0 auto;
 }
 
 h1 {
-    margin: 1rem;
+    margin: 1.5rem 0;
 }
 
-.cards {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+.table-wrapper {
+    overflow-x: auto;
+    background: #fff;
+    border: 1px solid #dfe3eb;
+    border-radius: 8px;
 }
 
-.card {
-    flex-basis: 31%;
-    margin: 1rem 0.4rem;
-    padding: 1rem 0.4rem 2.5rem 0.4rem;
-    border: solid 1px lightgrey;
-    border-radius: 15px;
-    box-shadow: 3px 2px 6px lightgrey;
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.card__email {
-    font-size: 1rem;
+th, td {
+    padding: 0.875rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #dfe3eb;
+}
+
+th {
+    background: #f5f8fa;
+}
+
+tr:last-child td {
+    border-bottom: 0;
+}
+
+.empty-state {
+    padding: 1.5rem;
+    background: #fff;
+    border: 1px solid #dfe3eb;
+    border-radius: 8px;
 }
 
 .form-wrapper {
-    font-size: 18px;
     max-width: 768px;
-    margin: 2rem auto;
     padding: 2rem;
-    border: solid 1px lightgrey;
-    border-radius: 15px;
-    box-shadow: 3px 2px 6px lightgrey;
+    background: #fff;
+    border: 1px solid #dfe3eb;
+    border-radius: 8px;
 }
 
 label, input {
-    margin-top: 5px;
     display: block;
-    font-size: inherit;
+    width: 100%;
+}
+
+label {
+    margin: 1rem 0 0.375rem;
 }
 
 input[type="text"] {
-    padding: .25rem;
+    padding: 0.625rem;
+    border: 1px solid #b6c7d2;
+    border-radius: 4px;
 }
 
-input[type="submit"] {
-    background-color: lightgrey;
+.button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.625rem 1rem;
+    color: #fff;
+    background: #ff7a59;
     border: none;
-    padding: .375rem 1rem;
-    margin-top: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-error {
+    margin: 1rem 0;
+    color: #b42318;
 }

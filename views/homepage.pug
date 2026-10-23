@@ -1,0 +1,26 @@
+doctype html
+html(lang="es")
+  head
+    title= title
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet" href="/css/style.css")
+  body
+    main.page
+      a.button(href="/update-cobj") Add to this table
+      h1 Adopciones
+      if data.length
+        .table-wrapper
+          table
+            thead
+              tr
+                th Name
+                th Cuenta
+                th Producto
+            tbody
+              each record in data
+                tr
+                  td= record.properties.name
+                  td= record.properties.cuenta
+                  td= record.properties.producto
+      else
+        p.empty-state Todavía no hay registros. Agrega el primero con el formulario.

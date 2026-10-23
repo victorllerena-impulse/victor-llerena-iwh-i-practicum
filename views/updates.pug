@@ -1,0 +1,21 @@
+doctype html
+html(lang="es")
+  head
+    title= title
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet" href="/css/style.css")
+  body
+    main.page
+      a(href="/") Return to the homepage
+      h1 Agregar una adopción
+      .form-wrapper
+        if error
+          p.form-error(role="alert")= error
+        form(action="/update-cobj" method="POST")
+          label(for="name") Name
+          input#name(type="text" name="name" value=values && values.name required)
+          label(for="cuenta") Cuenta
+          input#cuenta(type="text" name="cuenta" value=values && values.cuenta required)
+          label(for="producto") Producto
+          input#producto(type="text" name="producto" value=values && values.producto required)
+          button.button(type="submit") Crear registro
